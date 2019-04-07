@@ -2,8 +2,6 @@
 
 Hey, I'm **notawful**. This is the home of my new *engineering journal*. Here you will find small incantations and troubleshooting steps for smaller tasks and problems. You can find my website at [notawful.org](https://notawful.org) and find me on twitter at [awfulyprideful](https://twitter.com/awfulyprideful).
 
-*To myself: This page uses [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).*
-
 ## Engineering Journal
 
 ### Crouton (Chromebook chroot manager)
@@ -60,6 +58,7 @@ git config --global credential.helper 'cache --timeout==3600'
 * You can also use `git config --local` from within a repository to override `--global` settings for that particular repository.
 
 ## Ignore Below
+*To myself: This page uses [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).*
 *To myself: General format you should use here*
 ```markdown
 ### Topic (ex. ssh)
