@@ -1,37 +1,71 @@
-## Welcome to GitHub Pages
+## Welcome!
 
-You can use the [editor on GitHub](https://github.com/NotAwful/NotAwful.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Hey, I'm **notawful**. This is the home of my new *engineering journal*. Here you will find small incantations and troubleshooting steps for smaller tasks and problems. You can find my website at [notawful.org](https://notawful.org) and find me on twitter at [awfulyprideful](https://twitter.com/awfulyprideful).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+*To myself: This page uses [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).*
 
-### Markdown
+## Engineering Journal
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Crouton (Chromebook chroot manager)
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Shift back and forth between ChromeOS and graphical chroot
+```
+Crtl + Alt + Shift + [Forward|Backward]
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Vi
 
-### Jekyll Themes
+Changing modes in Vi
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/NotAwful/NotAwful.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Command | Mode
+---|---
+`esc` | Exit Insert or Append mode and enter Command mode
+`i` | enter Insert mode; insert text before cursor
+`shift + i` | enter Insert mode; insert text at start of current line
+`a` | enter Append mode; append text after cursor
+`shift + a` | enter Append mode; append text to end of line
 
-### Support or Contact
+Actions in Command Mode
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Command | Action
+----|----
+``d`` | Delete this line
+``d10000`` | fuck this entire file (assuming file is under 10,000 lines)
+``yy`` | cut (yank) this line
+``pp`` | put buffer here (paste copied line)
+``:read ~/secretkey`` | copy the contents of ~/secretkey to the current line
+``^`` | place cursor at start of line (start from the top)
+``$`` | place cursor at end of line (collect money at the end)
+``/word`` | find next *word*; will also find *broadsword* or *password*
+``?word`` | find previous *word*; will also find *broadsword* or *password*
+``\<word\>`` | find next complete instance of *word*; does not finds swords or passwords
+``?<word\>`` | find previous complete instance of *word*; does not finds swords or passwords
+``:q`` | quit
+``:q!`` | I SAID GOOD DAY, SIR. (Quit, but shouting and it bypasses save prompts)
+``:w`` | write to file (save)
+``:wq`` | write to file (save) then quit
+
+### Git
+
+Setting up git on a \*nix prompt. Set up username and email for commits, set to save credentials for repeated commits or cloning repositories over HTTPS.
+```
+sudo apt install git
+git config --global user.name "Name"
+git config --global user.email email@mail.example
+git config --global core.editor vim
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout==3600'
+```
+* You can list your current configuration with `git config --list`
+* You can also use `git config --local` from within a repository to override `--global` settings for that particular repository.
+
+## Ignore Below
+*To myself: General format you should use here*
+```markdown
+### Topic (ex. ssh)
+Cool thing you can do with ssh here
+*code block goes here*
+
+Second cool thing you can do with ssh here
+*another codeblock goes here*
+```
